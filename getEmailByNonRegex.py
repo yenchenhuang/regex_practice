@@ -1,12 +1,14 @@
 def is_email(input):
 	atIdx = input.find("@")
 	if atIdx < 1:
-		return None
+		return False
+	if " " in input:
+		return False
 	dotIdx = input.find(".")
 	if dotIdx <= atIdx+1:
-		return None
+		return False
 	if dotIdx == len(input) - 1:
-		return None
+		return False
 	return True
 
 def get_emails(paragraph):
